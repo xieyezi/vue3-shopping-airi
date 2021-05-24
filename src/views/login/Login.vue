@@ -1,8 +1,8 @@
 <template>
 	<div class="container mx-auto">
 		<!-- head logo -->
-        <div class="flex max-h-40 justify-items-center items-center">
-            <div class="shadow-sm">
+        <div class="flex h-1/3 justify-items-center items-center">
+            <div class="shadow w-9 h-9">
                 <img :src="logoUrl" alt="airi logo">
             </div>
         </div>

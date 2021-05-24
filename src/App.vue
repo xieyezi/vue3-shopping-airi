@@ -1,16 +1,25 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+<template :class="isDark ? 'dark' : ''">
+  <div>
+    <router-view />
+  </div>
+   
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import { useDark } from '@vueuse/core'
 
 export default defineComponent({
   name: 'App',
-  components: {
-    HelloWorld
+  setup() {
+    const isDark = useDark({
+            valueDark: 'dark',
+            valueLight: 'light'
+    })
+
+    return {
+        isDark
+    }
   }
 })
 </script>

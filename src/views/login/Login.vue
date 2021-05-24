@@ -19,7 +19,7 @@
 			</div>
 		</div>
 		<!-- submit button -->
-		<div @click="login" class="w-10/12 h-14 self-center flex flex-row justify-center items-center mt-8 rounded-full bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500">
+		<div @click="login" class="w-10/12 h-14 shadow-md self-center flex flex-row justify-center items-center mt-8 rounded-full bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500">
 			<p class="text-white text-base font-medium	">登录</p>
 		</div>
 		<!-- bottom action -->

@@ -13,8 +13,8 @@ export default defineComponent({
   name: 'App',
   setup() {
     const isDark = useDark({
-            valueDark: 'dark',
-            valueLight: 'light'
+      valueDark: 'dark',
+      valueLight: 'light'
     })
 
     return {

@@ -1,7 +1,7 @@
 <template>
 	<div class="container mx-auto h-screen bg-white dark:bg-gray-800 flex flex-col">
 		<!-- head logo -->
-		<div class="flex flex-col h-1/3 justify-center items-center">
+		<div class="flex flex-col h-2/5 justify-center items-center">
 			<div class="shadow w-16 h-16">
 				<img :src="logoUrl" alt="airi logo" />
 			</div>

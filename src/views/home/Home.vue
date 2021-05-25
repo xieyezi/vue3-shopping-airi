@@ -6,17 +6,20 @@
 				<van-icon name="cart-o" size="26" :color="isDark ? '#F9FAFB' : '#1F2937'" />
 			</template>
 		</Head>
-		<!-- searchInput -->
+		<!-- search-input -->
 		<Search @keywordChange="keyWordChange" :onClick="toSearch"></Search>
-		<!--  -->
+		<!-- content -->
+
+		<!-- footer-table -->
 	</div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted } from 'vue'
 import { useDark } from '@vueuse/core'
 import Head from '@components/Head.vue'
 import Search from '@components/Search.vue'
+import useStore from '../../store/home'
 
 export default defineComponent({
 	name: 'Home',
@@ -26,6 +29,18 @@ export default defineComponent({
 	},
 	setup() {
 		const isDark = useDark()
+
+		const [banerList, cateGoryList, brandList, hotList, getHomeData] = useStore((state) => [
+			state.banerList,
+			state.cateGoryList,
+			state.brandList,
+			state.hotList,
+			state.getHomeData
+		])
+
+		onMounted(() => {
+			getHomeData()
+		})
 
 		const keyWordChange = (e: string) => {
 			console.log('keyword:', e)

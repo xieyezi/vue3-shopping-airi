@@ -25,5 +25,14 @@ export default defineConfig({
         },
       ],
     }),
-  ]
+  ],
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://xieyezi.com:9003/mock/11/airi',
+        changeOrigin: true,
+        rewrite: (path: string) => path.replace(/^\/api/, '')
+      }
+    }
+  }
 })

@@ -1,24 +1,28 @@
 <template>
 	<div class="bg-white h-screen dark:bg-gray-800">
-		<button type="button" @click="toggleDark" class="bg-white dark:bg-grey">切换模式</button>
-		<p class="text-gray-500 dark:text-white">测试tailwind 黑夜模式</p>
-		<span class="text-gray-500 dark:text-white">{{ isDark ? 'Dark' : 'Light' }}</span>
+		<Head title="首页" :back="false">
+			<template v-slot:header-action>
+				<van-icon name="cart-o" size="26" :color="isDark ? '#F9FAFB' : '#1F2937'" />
+			</template>
+		</Head>
 	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useDark, useToggle } from '@vueuse/core'
+import { useDark } from '@vueuse/core'
+import Head from '@components/Head.vue'
 
 export default defineComponent({
 	name: 'Home',
+	components: {
+		Head
+	},
 	setup() {
 		const isDark = useDark()
-		const toggleDark = useToggle(isDark)
 
 		return {
-			isDark,
-			toggleDark
+			isDark
 		}
 	}
 })

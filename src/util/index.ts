@@ -1,8 +1,3 @@
-
-
 import { useVant } from './useVant'
 
-
-export {
-    useVant
-}
+export { useVant }

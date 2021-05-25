@@ -1,11 +1,14 @@
 <template>
 	<div class="bg-white h-screen dark:bg-gray-800">
+		<!-- header -->
 		<Head title="首页" :back="false">
 			<template v-slot:header-action>
 				<van-icon name="cart-o" size="26" :color="isDark ? '#F9FAFB' : '#1F2937'" />
 			</template>
 		</Head>
+		<!-- searchInput -->
 		<Search @keywordChange="keyWordChange" :onClick="toSearch"></Search>
+		<!--  -->
 	</div>
 </template>
 

@@ -5,6 +5,7 @@
 				<van-icon name="cart-o" size="26" :color="isDark ? '#F9FAFB' : '#1F2937'" />
 			</template>
 		</Head>
+		<Search @keywordChange="keyWordChange" :onClick="toSearch"></Search>
 	</div>
 </template>
 
@@ -12,17 +13,29 @@
 import { defineComponent } from 'vue'
 import { useDark } from '@vueuse/core'
 import Head from '@components/Head.vue'
+import Search from '@components/Search.vue'
 
 export default defineComponent({
 	name: 'Home',
 	components: {
-		Head
+		Head,
+		Search
 	},
 	setup() {
 		const isDark = useDark()
 
+		const keyWordChange = (e: string) => {
+			console.log('keyword:', e)
+		}
+
+		const toSearch = () => {
+			console.log('去搜索页')
+		}
+
 		return {
-			isDark
+			isDark,
+			keyWordChange,
+			toSearch
 		}
 	}
 })

@@ -1,5 +1,5 @@
 <template>
-	<div class="container w-screen h-12 bg-gray-50 dark:bg-gray-800 flex">
+	<div class="container w-screen h-12 bg-gray-50 border-b-2 dark:bg-gray-800 flex">
 		<div class="flex-none w-12 flex justify-center items-center">
 			<van-icon v-if="back" name="arrow-left" size="26" :color="isDark ? '#F9FAFB' : '#1F2937'" />
 		</div>

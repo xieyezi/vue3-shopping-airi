@@ -1,5 +1,6 @@
 <template>
-	<div class="bg-white h-screen dark:bg-gray-800">
+	<div v-if="isFetching">loading...</div>
+	<div v-else class="bg-gray-100 h-screen dark:bg-gray-800 flex flex-col items-center">
 		<!-- header -->
 		<Head title="首页" :back="false">
 			<template v-slot:header-action>
@@ -9,34 +10,51 @@
 		<!-- search-input -->
 		<Search @keywordChange="keyWordChange" :onClick="toSearch"></Search>
 		<!-- content -->
-
+		<div class="w-11/12 mt-2">
+			<Swiper :list="banners"></Swiper>
+			<Category :list="cateGoryList"></Category>
+		</div>
 		<!-- footer-table -->
 	</div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue'
+import { computed, defineComponent, onMounted } from 'vue'
 import { useDark } from '@vueuse/core'
 import Head from '@components/Head.vue'
 import Search from '@components/Search.vue'
 import useStore from '../../store/home'
+import Swiper from '@src/components/Swiper.vue'
+import Category from './components/Category.vue'
 
 export default defineComponent({
 	name: 'Home',
 	components: {
 		Head,
-		Search
+		Search,
+		Swiper,
+		Category
 	},
 	setup() {
 		const isDark = useDark()
 
-		const [banerList, cateGoryList, brandList, hotList, getHomeData] = useStore((state) => [
+		const [isFetching, banerList, cateGoryList, brandList, hotList, getHomeData] = useStore((state) => [
+			state.isFetching,
 			state.banerList,
 			state.cateGoryList,
 			state.brandList,
 			state.hotList,
 			state.getHomeData
 		])
+
+		const banners = computed(() =>
+			banerList.value.map((e: string) => {
+				return {
+					imgUrl: e,
+					url: ''
+				}
+			})
+		)
 
 		onMounted(() => {
 			getHomeData()
@@ -52,6 +70,11 @@ export default defineComponent({
 
 		return {
 			isDark,
+			isFetching,
+			banerList,
+			cateGoryList,
+			banners,
+			hotList,
 			keyWordChange,
 			toSearch
 		}

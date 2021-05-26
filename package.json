@@ -17,11 +17,13 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-angular": "^12.1.4",
+    "@types/axios": "^0.14.0",
     "@types/node": "^15.6.0",
     "@vitejs/plugin-vue": "^1.2.2",
     "@vue/compiler-sfc": "^3.0.5",
     "@vueuse/core": "^4.11.0",
     "autoprefixer": "^10.2.5",
+    "axios": "^0.21.1",
     "commitizen": "^4.2.3",
     "commitlint-config-cz": "^0.13.2",
     "cz-customizable": "^6.3.0",

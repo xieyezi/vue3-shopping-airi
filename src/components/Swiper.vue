@@ -1,5 +1,5 @@
 <template>
-	<van-swipe class="my-swipe" :autoplay="3000" indicator-color="#1baeae">
+	<van-swipe class="w-full rounded-md shadow-sm" :autoplay="3000" indicator-color="#fff">
 		<van-swipe-item v-for="(item, index) in list" :key="index">
 			<img :src="item.imgUrl" alt="" @click="goTo(item.url)" />
 		</van-swipe-item>
@@ -21,7 +21,7 @@ export default defineComponent({
 	},
 	setup() {
 		const goTo = (url: string) => {
-			window.open(url)
+			if (url != '') window.open(url)
 		}
 		return {
 			goTo

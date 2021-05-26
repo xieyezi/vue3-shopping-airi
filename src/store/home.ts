@@ -1,6 +1,5 @@
 import create, { State } from 'genji-es'
-import { useFetch } from '@vueuse/core'
-import { unref } from 'vue-demi'
+import axios from 'axios'
 
 export interface HomeState extends State {
 	isFetching: boolean
@@ -9,6 +8,7 @@ export interface HomeState extends State {
 	brandList: Array<NameWithIcon>
 	hotList: Array<HotItem>
 	getHomeData: () => Promise<void>
+	toggleLoading: () => void
 }
 
 export interface NameWithIcon {
@@ -29,20 +29,16 @@ const useStore = create<HomeState>((set, get) => ({
 	cateGoryList: [],
 	brandList: [],
 	hotList: [],
+	toggleLoading: () => set((state) => ({ isFetching: !state.isFetching })),
 	getHomeData: async () => {
 		set({ isFetching: true })
-		const { isFetching, data, isFinished } = await useFetch('http://xieyezi.com:9003/mock/11/airi/index').get().json()
-		// const {} = data
-		console.log(isFinished.value)
-		if (isFinished.value) {
-			console.log('data:', data)
-			console.log('data.value:', unref(data))
-			const { banerList, brandList, cateGoryList, hotList } = data.value
-			console.log('banerList:', banerList)
-		}
-		set({
-			isFetching: unref(isFetching)
-		})
+		const res = await axios.get('/api/index')
+		const { banerList, cateGoryList, brandList, hotList } = res.data
+		set({ banerList })
+		set({ cateGoryList })
+		set({ brandList })
+		set({ hotList })
+		set({ isFetching: false })
 	}
 }))
 

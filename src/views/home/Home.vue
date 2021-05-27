@@ -13,6 +13,7 @@
 		<div class="w-11/12 mt-2">
 			<Swiper :list="banners"></Swiper>
 			<Category :list="cateGoryList"></Category>
+			<Brand :list="brandList"></Brand>
 		</div>
 		<!-- footer-table -->
 	</div>
@@ -26,6 +27,7 @@ import Search from '@components/Search.vue'
 import useStore from '../../store/home'
 import Swiper from '@src/components/Swiper.vue'
 import Category from './components/Category.vue'
+import Brand from './components/Brand.vue'
 
 export default defineComponent({
 	name: 'Home',
@@ -33,7 +35,8 @@ export default defineComponent({
 		Head,
 		Search,
 		Swiper,
-		Category
+		Category,
+		Brand
 	},
 	setup() {
 		const isDark = useDark()
@@ -73,6 +76,7 @@ export default defineComponent({
 			isFetching,
 			banerList,
 			cateGoryList,
+			brandList,
 			banners,
 			hotList,
 			keyWordChange,

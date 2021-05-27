@@ -9,6 +9,7 @@
     "commit": "git-cz"
   },
   "dependencies": {
+    "@better-scroll/core": "^2.3.1",
     "genji-es": "^1.0.1",
     "vant": "^3.0.17",
     "vue": "^3.0.5",

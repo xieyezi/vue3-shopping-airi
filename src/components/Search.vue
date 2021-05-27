@@ -8,19 +8,21 @@
 				placeholder="最高可降800"
 			/>
 		</div>
-		<div class="w-1/12 text-center ml-2"><p class="text-gray-800 dark:text-gray-50 text-sm">搜索</p></div>
+		<div class="w-1/12 text-center ml-2" @click="onClick">
+			<p class="text-gray-800 dark:text-gray-50 text-sm">搜索</p>
+		</div>
 	</div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
 import { useDark } from '@vueuse/core'
 
 export default defineComponent({
 	name: 'Search',
 	props: {
 		onClick: {
-			type: Function
+			type: Function as PropType<() => void>
 		}
 	},
 	setup(_, context) {

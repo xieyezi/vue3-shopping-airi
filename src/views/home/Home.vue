@@ -13,14 +13,14 @@
 		<div class="w-11/12 mt-2">
 			<Swiper :list="banners"></Swiper>
 			<Category :list="cateGoryList"></Category>
-			<Brand :list="brandList"></Brand>
+			<Brand :list="brandList" ref="brandRef"></Brand>
 		</div>
 		<!-- footer-table -->
 	</div>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, onMounted } from 'vue'
+import { computed, defineComponent, nextTick, onMounted, ref, watch } from 'vue'
 import { useDark } from '@vueuse/core'
 import Head from '@components/Head.vue'
 import Search from '@components/Search.vue'
@@ -40,6 +40,7 @@ export default defineComponent({
 	},
 	setup() {
 		const isDark = useDark()
+		let brandRef = ref<any>(null)
 
 		const [isFetching, banerList, cateGoryList, brandList, hotList, getHomeData] = useStore((state) => [
 			state.isFetching,
@@ -63,6 +64,20 @@ export default defineComponent({
 			getHomeData()
 		})
 
+		watch(
+			brandList,
+			() => {
+				console.log('brandList', brandList.value)
+				nextTick(() => {
+					brandRef && brandRef.value.refresh()
+					console.log('刷新完成....')
+				})
+			},
+			{
+				deep: true
+			}
+		)
+
 		const keyWordChange = (e: string) => {
 			console.log('keyword:', e)
 		}
@@ -72,6 +87,7 @@ export default defineComponent({
 		}
 
 		return {
+			brandRef,
 			isDark,
 			isFetching,
 			banerList,

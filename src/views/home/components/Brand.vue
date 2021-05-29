@@ -1,10 +1,24 @@
 <template>
-	<div class="w-full h-24 mt-3 rounded-md  bg-white shadow-sm wrapper whitespace-nowrap relative overflow-hidden">
-		<div class="scroll-content inline-block pt-1">
+	<div
+		class="
+			w-full
+			h-24
+			mt-3
+			rounded-md
+			bg-white
+			dark:bg-xieyezi-content
+			shadow-sm
+			wrapper
+			whitespace-nowrap
+			relative
+			overflow-hidden
+		"
+	>
+		<div class="scroll-content inline-block pt-3">
 			<div class="scroll-item inline-block" v-for="(item, index) in list" :key="index">
 				<div class="w-14 h-14 inline-block mx-2">
 					<img :src="item.icon" :alt="item.name" class="w-full" @click="toCatory(item.name)" />
-					<p class="text-xs pt-1 font-light text-gray-700 dark:text-gray-50">{{ item.name }}</p>
+					<p class="text-xs pt-1 font-light text-gray-700 dark:text-gray-200 dark:text-opacity-70">{{ item.name }}</p>
 				</div>
 			</div>
 		</div>
@@ -26,12 +40,10 @@ export default defineComponent({
 		let bscroll: BScrollConstructor<{}>
 
 		onMounted(() => {
-			nextTick(() => {
-				bscroll = new BScroll('.wrapper' as any, {
-					scrollX: true,
-					click: true,
-					probeType: 3
-				})
+			bscroll = new BScroll('.wrapper' as any, {
+				scrollX: true,
+				click: true,
+				probeType: 3
 			})
 		})
 

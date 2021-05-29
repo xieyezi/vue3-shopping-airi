@@ -1,5 +1,5 @@
 <template>
-	<div class="container mx-auto h-screen bg-white dark:bg-gray-800 flex flex-col">
+	<div class="container mx-auto h-screen bg-white dark:bg-xieyezi-black flex flex-col">
 		<!-- head logo -->
 		<div class="flex flex-col h-2/5 justify-center items-center">
 			<div class="shadow w-16 h-16">
@@ -52,7 +52,7 @@
 		<!-- bottom action -->
 		<div class="flex flex-row justify-center items-center mt-8 divide-x divide-gray-300">
 			<p class="pr-5 text-gray-400 text-sm">找回密码</p>
-			<p class="pl-5 text-gray-800 text-sm">新用户注册</p>
+			<p class="pl-5 text-gray-400 text-sm">新用户注册</p>
 		</div>
 	</div>
 </template>

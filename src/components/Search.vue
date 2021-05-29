@@ -1,5 +1,5 @@
 <template>
-	<div class="container w-screen h-12 bg-white dark:bg-gray-800 flex justify-center items-center">
+	<div class="container w-screen h-12 bg-white dark:bg-xieyezi-black flex justify-center items-center">
 		<div class="w-10/12 h-10 rounded-full bg-gray-100 flex justify-start items-center">
 			<input
 				type="text"

@@ -13,6 +13,7 @@
 		<div class="w-11/12 mt-2">
 			<Swiper :list="banners"></Swiper>
 			<Category :list="cateGoryList"></Category>
+			<LeftTitle title="品牌专场"></LeftTitle>
 			<Brand :list="brandList" ref="brandRef"></Brand>
 		</div>
 		<!-- footer-table -->
@@ -24,10 +25,11 @@ import { computed, defineComponent, nextTick, onMounted, ref, watch } from 'vue'
 import { useDark } from '@vueuse/core'
 import Head from '@components/Head.vue'
 import Search from '@components/Search.vue'
-import useStore from '../../store/home'
-import Swiper from '@src/components/Swiper.vue'
+import Swiper from '@components/Swiper.vue'
+import LeftTitle from '@components/LeftTitle.vue'
 import Category from './components/Category.vue'
 import Brand from './components/Brand.vue'
+import useStore from '../../store/home'
 
 export default defineComponent({
 	name: 'Home',
@@ -36,7 +38,8 @@ export default defineComponent({
 		Search,
 		Swiper,
 		Category,
-		Brand
+		Brand,
+		LeftTitle
 	},
 	setup() {
 		const isDark = useDark()

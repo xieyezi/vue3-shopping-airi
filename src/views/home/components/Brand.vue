@@ -3,7 +3,7 @@
 		class="
 			w-full
 			h-24
-			mt-3
+			mt-2
 			rounded-md
 			bg-white
 			dark:bg-xieyezi-content

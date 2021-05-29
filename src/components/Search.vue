@@ -9,7 +9,7 @@
 			/>
 		</div>
 		<div class="w-1/12 text-center ml-2" @click="onClick">
-			<p class="text-gray-800 dark:text-gray-50 text-sm">搜索</p>
+			<p class="text-gray-800 dark:text-gray-50 text-sm dark:text-opacity-80">搜索</p>
 		</div>
 	</div>
 </template>

@@ -64,20 +64,6 @@ export default defineComponent({
 			getHomeData()
 		})
 
-		watch(
-			brandList,
-			() => {
-				console.log('brandList', brandList.value)
-				nextTick(() => {
-					brandRef && brandRef.value.refresh()
-					console.log('刷新完成....')
-				})
-			},
-			{
-				deep: true
-			}
-		)
-
 		const keyWordChange = (e: string) => {
 			console.log('keyword:', e)
 		}

@@ -1,9 +1,9 @@
 <template>
-	<div class="w-full h-24 mt-3 rounded-md bg-white wrapper whitespace-nowrap relative overflow-hidden">
+	<div class="w-full h-24 mt-3 rounded-md  bg-white shadow-sm wrapper whitespace-nowrap relative overflow-hidden">
 		<div class="scroll-content inline-block pt-1">
 			<div class="scroll-item inline-block" v-for="(item, index) in list" :key="index">
-				<div class="flex flex-col justify-center items-center">
-					<img :src="item.icon" :alt="item.name" class="w-16 h-16" @click="toCatory(item.name)" />
+				<div class="w-14 h-14 inline-block mx-2">
+					<img :src="item.icon" :alt="item.name" class="w-full" @click="toCatory(item.name)" />
 					<p class="text-xs pt-1 font-light text-gray-700 dark:text-gray-50">{{ item.name }}</p>
 				</div>
 			</div>
@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { NameWithIcon } from '@src/store/home'
-import { defineComponent, nextTick, onMounted, PropType, Ref, ref, watch } from 'vue'
+import { defineComponent, nextTick, onMounted, PropType } from 'vue'
 import BScroll from '@better-scroll/core'
 import { BScrollConstructor } from '@better-scroll/core/dist/types/BScroll'
 
@@ -26,10 +26,12 @@ export default defineComponent({
 		let bscroll: BScrollConstructor<{}>
 
 		onMounted(() => {
-			bscroll = new BScroll('.wrapper' as any, {
-				scrollX: true,
-				click: true,
-				probeType: 3
+			nextTick(() => {
+				bscroll = new BScroll('.wrapper' as any, {
+					scrollX: true,
+					click: true,
+					probeType: 3
+				})
 			})
 		})
 

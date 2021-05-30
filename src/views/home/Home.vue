@@ -4,7 +4,7 @@
 		<!-- header -->
 		<Head title="首页" :back="false">
 			<template v-slot:header-action>
-				<van-icon name="cart-o" size="26" :color="isDark ? '#F9FAFB' : '#1F2937'" />
+				<van-icon name="cart-o" size="26" badge="9" :color="isDark ? '#F9FAFB' : '#1F2937'" />
 			</template>
 		</Head>
 		<!-- search-input -->
@@ -15,13 +15,15 @@
 			<Category :list="cateGoryList"></Category>
 			<LeftTitle title="品牌专场"></LeftTitle>
 			<Brand :list="brandList" ref="brandRef"></Brand>
+			<LeftTitle title="热销商品"></LeftTitle>
+			<HotList :hotList="hotList"></HotList>
 		</div>
 		<!-- footer-table -->
 	</div>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, nextTick, onMounted, ref, watch } from 'vue'
+import { computed, defineComponent, onMounted, ref } from 'vue'
 import { useDark } from '@vueuse/core'
 import Head from '@components/Head.vue'
 import Search from '@components/Search.vue'
@@ -29,6 +31,7 @@ import Swiper from '@components/Swiper.vue'
 import LeftTitle from '@components/LeftTitle.vue'
 import Category from './components/Category.vue'
 import Brand from './components/Brand.vue'
+import HotList from './components/HotList.vue'
 import useStore from '../../store/home'
 
 export default defineComponent({
@@ -39,7 +42,8 @@ export default defineComponent({
 		Swiper,
 		Category,
 		Brand,
-		LeftTitle
+		LeftTitle,
+		HotList
 	},
 	setup() {
 		const isDark = useDark()

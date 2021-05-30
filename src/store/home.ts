@@ -6,7 +6,7 @@ export interface HomeState extends State {
 	banerList: string[]
 	cateGoryList: Array<NameWithIcon>
 	brandList: Array<NameWithIcon>
-	hotList: Array<HotItem>
+	hotList: Array<GoodItem>
 	getHomeData: () => Promise<void>
 	toggleLoading: () => void
 }
@@ -16,7 +16,7 @@ export interface NameWithIcon {
 	icon: string
 }
 
-export interface HotItem {
+export interface GoodItem {
 	goodsId: string
 	goodsMiniPrice: string
 	goodsName: string

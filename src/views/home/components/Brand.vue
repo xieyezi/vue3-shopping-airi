@@ -27,7 +27,7 @@
 
 <script lang="ts">
 import { NameWithIcon } from '@src/store/home'
-import { defineComponent, nextTick, onMounted, PropType } from 'vue'
+import { defineComponent, onMounted, PropType } from 'vue'
 import BScroll from '@better-scroll/core'
 import { BScrollConstructor } from '@better-scroll/core/dist/types/BScroll'
 

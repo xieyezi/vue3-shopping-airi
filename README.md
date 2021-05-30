@@ -1,9 +1,10 @@
 # vue3-AiRi
 
-一款基于vue3开发的购物 H5 App，涵盖了购物App的常见功能
+A shopping H5 App developed based on Vue3 + Typescript, covering the common functions of shopping App.
 
-### 开发中....
-## 预览
+### In development...
+
+## Preview
 
 部分页面效果如下：
 

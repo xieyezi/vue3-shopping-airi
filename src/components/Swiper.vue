@@ -1,5 +1,5 @@
 <template>
-	<van-swipe class="w-full rounded-md shadow-sm" :autoplay="3000" indicator-color="#fff">
+	<van-swipe class="w-full rounded-md shadow-sm mt-1" :autoplay="3000" indicator-color="#fff">
 		<van-swipe-item v-for="(item, index) in list" :key="index">
 			<img :src="item.imgUrl" alt="" @click="goTo(item.url)" />
 		</van-swipe-item>

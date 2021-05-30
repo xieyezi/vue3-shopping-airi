@@ -1,6 +1,6 @@
 <template>
 	<div v-if="isFetching">loading...</div>
-	<div v-else class="bg-gray-100 h-screen dark:bg-xieyezi-black flex flex-col items-center">
+	<div v-else class="bg-gray-100 h-full dark:bg-xieyezi-black flex flex-col items-center">
 		<!-- header -->
 		<Head title="首页" :back="false">
 			<template v-slot:header-action>

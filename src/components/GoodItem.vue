@@ -1,10 +1,11 @@
 <template>
 	<div class="w-full h-40" @click="toDetail">
 		<img :src="goodItem.goodsPicUrl" :alt="goodItem.goodsName" />
+		<p>{{ goodItem.goodsName }}</p>
+		<p>优衣库官方旗舰店</p>
+		<p>{{ goodItem.goodsMiniPrice }}</p>
 	</div>
-	<p>{{ goodItem.goodsName }}</p>
-	<p>优衣库官方旗舰店</p>
-	<p>{{ goodItem.goodsMiniPrice }}</p>
+	
 </template>
 
 <script lang="ts">

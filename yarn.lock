@@ -1521,10 +1521,10 @@ generic-names@^2.0.1:
   dependencies:
     loader-utils "^1.1.0"
 
-genji-es@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/genji-es/-/genji-es-1.0.1.tgz#d7cda0ce45a265303d332f21079cf1efe35303f7"
-  integrity sha512-fDnabICPQC3rkg0g+7ssa3EXjT0mqzDezlg9llibZ+lx8TSoEkWHkphk4mhHt1+52bq6uPYcv//yO7zszroNvA==
+genji-es@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/genji-es/-/genji-es-1.0.2.tgz#5f55894337d951a54a872b36bd333abfc7761126"
+  integrity sha512-s+mvYjtsOH8e2AlZpgnS3yIH6YqVVGMONomtncTiNARrk2ueEfkpMyjSOG+9VYAVXnCE1NHxBMOFBW2FP2T31A==
 
 get-caller-file@^2.0.5:
   version "2.0.5"

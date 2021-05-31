@@ -34,10 +34,12 @@ const useStore = create<HomeState>((set, get) => ({
 		set({ isFetching: true })
 		const res = await axios.get('/api/index')
 		const { banerList, cateGoryList, brandList, hotList } = res.data
-		set({ banerList })
-		set({ cateGoryList })
-		set({ brandList })
-		set({ hotList })
+		set({
+			banerList,
+			cateGoryList,
+			brandList,
+			hotList
+		})
 		set({ isFetching: false })
 	}
 }))

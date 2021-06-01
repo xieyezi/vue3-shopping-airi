@@ -26,6 +26,7 @@ export default defineComponent({
 			type: Function as PropType<() => void>
 		}
 	},
+	emits: ['keywordChange'],
 	setup(_, context) {
 		const isDark = useDark()
 		const { emit } = context

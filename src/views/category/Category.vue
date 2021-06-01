@@ -2,7 +2,7 @@
 	<div v-if="isFetching" class="flex justify-center items-center w-screen h-screen">
 		<van-loading color="#8B5CF6"> 疯狂加载中...</van-loading>
 	</div>
-	<div v-else class="bg-gray-100 h-full dark:bg-xieyezi-black flex flex-col items-center overflow-hidden pb-12">
+	<div v-else class="bg-white h-full dark:bg-xieyezi-black flex flex-col items-center overflow-hidden pb-12">
 		<!-- header -->
 		<Head title="分类" :back="false">
 			<template v-slot:header-action>
@@ -12,24 +12,30 @@
 		<!-- search-input -->
 		<Search @keywordChange="keyWordChange" :onClick="toSearch"></Search>
 		<!-- content -->
-		<div class="w-11/12 mt-2"></div>
+		<div class="w-full mt-1 flex justify-start content-start">
+			<SliderBar :categoryList="categoryList"></SliderBar>
+			<div>右侧内容</div>
+		</div>
 	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted, reactive, ref } from 'vue'
-import Head from '@components/Head.vue'
-import Search from '@components/Search.vue'
 import useStore from '@src/store/category'
 import { useDark } from '@vueuse/core'
+import Head from '@components/Head.vue'
+import Search from '@components/Search.vue'
+import SliderBar from './components/SlideBar.vue'
 
 export default defineComponent({
 	name: 'Cartgory',
 	components: {
 		Head,
-		Search
+		Search,
+		SliderBar
 	},
 	setup() {
+		const active = ref(0)
 		const isDark = useDark()
 		const [isFetching, categoryList, getCategoryData] = useStore((state) => [
 			state.isFetching,
@@ -50,6 +56,7 @@ export default defineComponent({
 		}
 
 		return {
+			active,
 			isDark,
 			isFetching,
 			categoryList,

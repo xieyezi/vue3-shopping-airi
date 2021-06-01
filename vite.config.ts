@@ -11,7 +11,7 @@ export default defineConfig({
       "@src": resolve(__dirname, "./src"),
       "@assets": resolve(__dirname, "./src/assets"),
       "@components": resolve(__dirname, "./src/components"),
-      "@uitl": resolve(__dirname, "./src/uitl"),
+      "@uitl": resolve(__dirname, "./src/uitl")
     }
   },
   plugins: [
@@ -34,5 +34,16 @@ export default defineConfig({
         rewrite: (path: string) => path.replace(/^\/api/, '')
       }
     }
-  }
+  },
+  css: {
+    preprocessorOptions: {
+      less: {
+        javascriptEnabled: true,
+        // 自定义vant样式
+        modifyVars: {
+          'sidebar-width': '100px',
+        },
+      },
+    },
+  },
 })

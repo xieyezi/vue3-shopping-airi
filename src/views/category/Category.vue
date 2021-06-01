@@ -13,14 +13,20 @@
 		<Search @keywordChange="keyWordChange" :onClick="toSearch"></Search>
 		<!-- content -->
 		<div class="w-full mt-1 flex justify-start content-start">
-			<SliderBar :categoryList="categoryList"></SliderBar>
-			<div>右侧内容</div>
+			<!-- left sliderbar -->
+			<SliderBar :categoryList="categoryList" @sliderIndexChange="indexChange"></SliderBar>
+			<!-- right list -->
+			<div class="content ml-1 bg-green-600 p-3">
+				<div class="">
+					<img src="" alt="">
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, reactive, ref } from 'vue'
+import { defineComponent, onMounted, ref } from 'vue'
 import useStore from '@src/store/category'
 import { useDark } from '@vueuse/core'
 import Head from '@components/Head.vue'
@@ -47,6 +53,10 @@ export default defineComponent({
 			getCategoryData()
 		})
 
+		const indexChange=(index:number)=> {
+			console.log(index)
+		}
+
 		const keyWordChange = (e: string) => {
 			console.log('keyword:', e)
 		}
@@ -61,8 +71,19 @@ export default defineComponent({
 			isFetching,
 			categoryList,
 			keyWordChange,
-			toSearch
+			toSearch,
+			indexChange
 		}
 	}
 })
 </script>
+
+<style scoped>
+.content {
+	width: calc(100% - 100px);
+    height: calc(100% - 160px);
+	/* height: -moz-calc(100vh - 160px);
+	height: -webkit-calc(100vh - 160px);
+	height: calc(100vh - 160px); */
+}
+</style>

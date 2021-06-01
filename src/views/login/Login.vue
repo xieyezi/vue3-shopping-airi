@@ -93,7 +93,7 @@ export default defineComponent({
 			const isLogin = useLocalStorage('IS_LOGIN', true)
 			if (isLogin)
 				route.replace({
-					name: 'Home'
+					name: 'Index'
 				})
 		}
 

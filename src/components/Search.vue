@@ -1,9 +1,10 @@
 <template>
-	<div class="container w-screen h-12 bg-white dark:bg-xieyezi-black flex justify-center items-center mt-2">
+	<div class="container w-screen h-12 bg-white dark:bg-xieyezi-black flex justify-center items-center mt-1">
 		<div class="w-10/12 h-10 rounded-full bg-gray-100 flex justify-start items-center">
+			<span class="pl-4"><van-icon name="search" color="#9CA3AF" /></span>
 			<input
 				type="text"
-				class="w-full ml-5 mr-5 focus:outline-none bg-gray-100 text-sm"
+				class="w-full ml-2 mr-5 focus:outline-none bg-gray-100 text-sm"
 				@change="emitToFather"
 				placeholder="最高可降800"
 			/>

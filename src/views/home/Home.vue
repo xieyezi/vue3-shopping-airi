@@ -2,11 +2,11 @@
 	<div v-if="isFetching" class="flex justify-center items-center w-screen h-screen">
 		<van-loading color="#8B5CF6"> 疯狂加载中...</van-loading>
 	</div>
-	<div v-else class="bg-gray-100 h-full dark:bg-xieyezi-black flex flex-col items-center overflow-hidden">
+	<div v-else class="bg-gray-100 h-full dark:bg-xieyezi-black flex flex-col items-center overflow-hidden pb-12">
 		<!-- header -->
 		<Head title="首页" :back="false">
 			<template v-slot:header-action>
-				<van-icon name="cart-o" size="26" badge="9" :color="isDark ? '#F9FAFB' : '#1F2937'" class="mr-2" />
+				<van-icon name="cart-o" size="26" badge="9" :color="isDark ? '#A78BFA' : '#8B5CF6'" class="mr-2" />
 			</template>
 		</Head>
 		<!-- search-input -->

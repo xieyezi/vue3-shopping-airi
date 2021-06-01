@@ -1,6 +1,6 @@
 # vue3-AiRi
 
-A shopping H5 App developed based on Vue3 + Typescript, covering the common functions of shopping App.
+A shopping H5 App developed based on `Vue3 + Typescript + Vite + Genji`, covering the common functions of shopping App.
 
 ### In development...
 

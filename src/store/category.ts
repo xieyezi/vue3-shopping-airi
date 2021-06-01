@@ -20,7 +20,6 @@ const useStore = create<HomeState>((set, get) => ({
 	getCategoryData: async () => {
 		set({ isFetching: true })
 		const res = await axios.get('/api/category')
-		console.log(res)
 		const { categoryData } = res.data
 		set({
 			categoryList: categoryData,

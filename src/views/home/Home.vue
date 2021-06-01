@@ -20,7 +20,6 @@
 			<LeftTitle title="热销商品"></LeftTitle>
 			<HotList :hotList="hotList"></HotList>
 		</div>
-		<!-- footer-table -->
 	</div>
 </template>
 

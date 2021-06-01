@@ -4,7 +4,9 @@
 	>
 		<div v-for="(item, index) in list" :key="index" class="text-center cursor-pointer">
 			<img :src="item.icon" :alt="item.name" class="w-16 h-16" @click="toSearch(item.name)" />
-			<p class="text-xs pt-2 font-light text-gray-700 dark:text-gray-200 dark:text-opacity-70">{{ item.name }}</p>
+			<p class="text-xs pt-2 font-light text-gray-700 dark:text-gray-200 dark:text-opacity-70">
+				{{ item.name }}
+			</p>
 		</div>
 	</div>
 </template>

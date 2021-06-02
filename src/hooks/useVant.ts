@@ -9,7 +9,7 @@ export function useVant(app: App<Element>) {
 	app.use(Loading)
 	app.use(Tabbar)
 	app.use(TabbarItem)
-	app.use(Lazyload, { Loading: lazyPng })
+	app.use(Lazyload, { loading: lazyPng })
 
 	return app
 }

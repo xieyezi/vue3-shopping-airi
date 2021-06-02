@@ -41,9 +41,9 @@ export default defineComponent({
 </script>
 <style scoped>
 .slide-bar {
-	height: -moz-calc(100vh - 160px);
-	height: -webkit-calc(100vh - 160px);
-	height: calc(100vh - 160px);
+	height: -moz-calc(100vh - 155px);
+	height: -webkit-calc(100vh - 155px);
+	height: calc(100vh - 155px);
 }
 .active {
 	height: 30px;

@@ -1,6 +1,6 @@
 <template>
 	<div class="w-full h-64 bg-white dark:bg-xieyezi-content shadow-xs rounded-md p-2" @click="toDetail(goodItem)">
-		<img v-lazy="goodItem.goodsPicUrl" :alt="goodItem.goodsName"  />
+		<img v-lazy="goodItem.goodsPicUrl" :alt="goodItem.goodsName" />
 		<p class="pt-3 text-base text-gray-700 font-normal dark:text-gray-200 dark:text-opacity-90">
 			{{ goodItem.goodsName }}
 		</p>

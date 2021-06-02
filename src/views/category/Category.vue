@@ -82,8 +82,5 @@ export default defineComponent({
 .content {
 	width: calc(100% - 100px);
     height: calc(100% - 160px);
-	/* height: -moz-calc(100vh - 160px);
-	height: -webkit-calc(100vh - 160px);
-	height: calc(100vh - 160px); */
 }
 </style>

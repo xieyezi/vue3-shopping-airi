@@ -60,9 +60,9 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import logoUrl from '@assets/logo.png'
-import { useLocalStorage } from '@vueuse/core'
 import { Notify } from 'vant'
 import { useRouter } from 'vue-router'
+
 
 export default defineComponent({
 	name: 'Login',
@@ -90,11 +90,8 @@ export default defineComponent({
 				})
 				return
 			}
-			const isLogin = useLocalStorage('IS_LOGIN', true)
-			if (isLogin)
-				route.replace({
-					name: 'Index'
-				})
+			localStorage.setItem('IS_LOGIN', 'true')
+			route.replace({name: 'Index'})
 		}
 
 		return {

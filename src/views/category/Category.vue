@@ -18,7 +18,7 @@
 			<!-- right list -->
 			<div class="content ml-1 bg-green-600 p-3">
 				<div class="">
-					<img src="" alt="">
+					<img src="" alt="" />
 				</div>
 			</div>
 		</div>
@@ -53,7 +53,7 @@ export default defineComponent({
 			getCategoryData()
 		})
 
-		const indexChange=(index:number)=> {
+		const indexChange = (index: number) => {
 			console.log(index)
 		}
 
@@ -81,6 +81,6 @@ export default defineComponent({
 <style scoped>
 .content {
 	width: calc(100% - 100px);
-    height: calc(100% - 160px);
+	height: calc(100% - 160px);
 }
 </style>

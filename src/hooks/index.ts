@@ -1,4 +1,4 @@
 import { useVant } from './useVant'
-import {useAuth} from './useAuth'
+import { useAuth } from './useAuth'
 
-export { useVant,useAuth }
+export { useVant, useAuth }

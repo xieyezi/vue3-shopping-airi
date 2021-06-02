@@ -63,7 +63,6 @@ import logoUrl from '@assets/logo.png'
 import { Notify } from 'vant'
 import { useRouter } from 'vue-router'
 
-
 export default defineComponent({
 	name: 'Login',
 	setup() {
@@ -91,7 +90,7 @@ export default defineComponent({
 				return
 			}
 			localStorage.setItem('IS_LOGIN', 'true')
-			route.replace({name: 'Index'})
+			route.replace({ name: 'Index' })
 		}
 
 		return {

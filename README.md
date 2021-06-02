@@ -1,4 +1,4 @@
-# vue3-AiRi  <code>![visitors](https://visitor-badge.glitch.me/badge?page_id=xieyezi.vue3-shopping-airi)</code>
+# vue3-airi  <code>![visitors](https://visitor-badge.glitch.me/badge?page_id=xieyezi.vue3-shopping-airi)</code>
 
 
 Language: EN | [中文简体](README-CN.md)

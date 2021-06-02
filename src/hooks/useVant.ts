@@ -1,6 +1,6 @@
 import { App } from 'vue'
-import { Icon } from 'vant'
-import { Swipe, SwipeItem, Loading, Tabbar, TabbarItem } from 'vant'
+import { Icon, Lazyload, Swipe, SwipeItem, Loading, Tabbar, TabbarItem } from 'vant'
+import lazyPng from '@assets/images/home/loading.png'
 
 export function useVant(app: App<Element>) {
 	app.use(Icon)
@@ -9,5 +9,7 @@ export function useVant(app: App<Element>) {
 	app.use(Loading)
 	app.use(Tabbar)
 	app.use(TabbarItem)
+	app.use(Lazyload, { Loading: lazyPng })
+
 	return app
 }

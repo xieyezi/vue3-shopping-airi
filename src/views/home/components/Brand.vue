@@ -17,7 +17,7 @@
 		<div class="scroll-content inline-block pt-3">
 			<div class="scroll-item inline-block" v-for="(item, index) in list" :key="index">
 				<div class="w-14 h-14 inline-block mx-2">
-					<img :src="item.icon" :alt="item.name" class="w-full" @click="toCatory(item.name)" />
+					<img v-lazy="item.icon" :alt="item.name" class="w-full"  @click="toCatory(item.name)" />
 					<p class="text-xs pt-1 font-light text-gray-700 dark:text-gray-200 dark:text-opacity-70">
 						{{ item.name }}
 					</p>

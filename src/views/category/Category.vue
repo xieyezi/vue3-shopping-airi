@@ -18,7 +18,7 @@
 			<!-- right list -->
 			<div class="content ml-1 bg-green-600 p-3">
 				<div class="">
-					<img src="" alt="" />
+					<img :src="categoryList[active].banner" :alt="categoryList[active].name" />
 				</div>
 			</div>
 		</div>
@@ -54,7 +54,7 @@ export default defineComponent({
 		})
 
 		const indexChange = (index: number) => {
-			console.log(index)
+			active.value = index
 		}
 
 		const keyWordChange = (e: string) => {

@@ -21,7 +21,6 @@ const useStore = create<HomeState>((set, get) => ({
 		set({ isFetching: true })
 		const res = await axios.get('/api/category')
 		const { categoryData } = res.data
-		console.log(categoryData)
 		set({
 			categoryList: categoryData,
 			isFetching: false

@@ -10,12 +10,13 @@ Language: EN | [中文简体](README-CN.md)
 <code>![tailwindcss-version](https://img.shields.io/badge/tailwindcss-%202.x-%238B5CF6)</code>
 <code>![genji-version](https://img.shields.io/badge/genji-%201.x-%238B5CF6)</code>
 
-A shopping H5 App developed based on `Vue3 + Typescript + Vite + Genji`, covering the common functions of shopping App.
+一款基于 `vue3` + `typescript` + `vite` + `genji` + `tailwindcss` 开发的购物 `H5 App`，涵盖了购物`App`的常见功能
 
-### In development...
+### 开发中
 
-### Preview
+### 预览
 
+部分页面效果如下：
 
 | ![](./screenshot/Screenshot_1.png)  | ![](./screenshot/Screenshot_2.png)  | ![](./screenshot/Screenshot_3.png)  | ![](./screenshot/Screenshot_4.png)  |
 | :---------------------------------: | :---------------------------------: | :---------------------------------: | :---------------------------------: |

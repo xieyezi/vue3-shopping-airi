@@ -1,0 +1,5 @@
+{
+  "*.{js,ts,vue,tsx,json,css,less}": [
+    "npm run format"
+  ]
+}
